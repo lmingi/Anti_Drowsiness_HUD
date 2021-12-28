@@ -35,7 +35,9 @@ public class IntroSlider extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         introPref = new IntroPref(this);
-        if (introPref.isFirstTimeLaunch()) {
+
+        // Only open first time.
+        if (!introPref.isFirstTimeLaunch()) {
             launchHomeScreen();
             finish();
         }

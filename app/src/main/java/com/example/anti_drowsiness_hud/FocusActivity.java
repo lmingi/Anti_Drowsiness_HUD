@@ -3,7 +3,7 @@ package com.example.anti_drowsiness_hud;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class StudyActivity extends AppCompatActivity {
+public class FocusActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
