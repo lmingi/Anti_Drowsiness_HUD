@@ -3,6 +3,7 @@ package com.example.anti_drowsiness_hud;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
@@ -24,6 +25,9 @@ public class DriveActivity extends AppCompatActivity {
         setContentView(R.layout.activity_drive);
 
         TextView instruction = findViewById(R.id.instruction);
+        ImageView eyes = findViewById(R.id.eyes_main);
+        eyes.setVisibility(View.INVISIBLE);
+
 
         CountDownTimer timer = new CountDownTimer(3000, 1000) {
 
@@ -33,10 +37,14 @@ public class DriveActivity extends AppCompatActivity {
 
             @Override
             public void onFinish() {
-                instruction .setVisibility(View.INVISIBLE); //(or GONE)
+                instruction .setVisibility(View.INVISIBLE);
+                eyes.setVisibility(View.VISIBLE);
+                setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+
+
+//(or GONE)
             }
         }.start();
-
 
 
     }

@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Anti Drowsiness HUD</string>
+    <string name="place_your_phone_under_n_the_front_window">Place your phone under \n the front window.</string>
 </resources>
