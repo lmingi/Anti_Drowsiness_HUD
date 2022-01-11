@@ -9,7 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Anti_drowsiness_hud">
-
+        <activity
+            android:name=".FocusInstruction"
+            android:exported="false" />
+        <activity
+            android:name=".DriveInstruction"
+            android:exported="false" />
         <activity
             android:name=".FocusActivity"
             android:exported="false" />

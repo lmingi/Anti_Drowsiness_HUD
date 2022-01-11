@@ -21,7 +21,7 @@ public class ActivityHome extends AppCompatActivity {
         driveImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ActivityHome.this, DriveActivity.class);
+                Intent intent = new Intent(ActivityHome.this, DriveInstruction.class);
                 startActivity(intent);
             }
         });
@@ -29,7 +29,7 @@ public class ActivityHome extends AppCompatActivity {
         focusImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ActivityHome.this, FocusActivity.class);
+                Intent intent = new Intent(ActivityHome.this, FocusInstruction.class);
                 startActivity(intent);
             }
         });

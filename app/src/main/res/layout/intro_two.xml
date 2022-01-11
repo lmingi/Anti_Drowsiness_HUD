@@ -44,7 +44,7 @@
             android:layout_marginTop="15dp"
             android:layout_marginEnd="25sp"
             android:gravity="center"
-            android:text="Put it on the desk when studying or working. \nThe watching eyes will help you focus."
+            android:text="Put it on the desk when studying or working. \nThe watching eyes will shake in every 25 minutes \n to help you focus."
             android:textColor="@color/white"
             android:textSize="15sp" />
 
