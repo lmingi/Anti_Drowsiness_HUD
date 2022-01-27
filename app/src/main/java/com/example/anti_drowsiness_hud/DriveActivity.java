@@ -21,17 +21,23 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 
-
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.tomer.fadingtextview.FadingTextView;
 
 import java.util.Timer;
 import java.util.TimerTask;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 
 public class DriveActivity extends AppCompatActivity implements SensorEventListener {
 
 
     private SensorManager sensorManager;
     private Sensor accelerometer;
+    private AdView mAdView;
+
 
     ImageView eyes;
     public static int x = 0;
@@ -45,6 +51,18 @@ public class DriveActivity extends AppCompatActivity implements SensorEventListe
         setContentView(R.layout.activity_drive);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+
+
+        MobileAds.initialize(this, new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(InitializationStatus initializationStatus) {
+            }
+        });
+
+        mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
+
 
 
         DisplayMetrics displayMetrics = new DisplayMetrics();
@@ -70,6 +88,8 @@ public class DriveActivity extends AppCompatActivity implements SensorEventListe
     }
 
 
+
+
     @Override
     protected void onResume() {
         super.onResume();
@@ -90,8 +110,8 @@ public class DriveActivity extends AppCompatActivity implements SensorEventListe
 
         if (event.sensor.getType() == Sensor.TYPE_ACCELEROMETER) {
 
-            x = (int) (event.values[0]/3);
-            y = (int) (event.values[1]/3);
+            x = (int) (event.values[0]);
+            y = (int) (event.values[1]);
             int locX = (int)eyes.getX();
             int locY = (int)eyes.getY();
 
